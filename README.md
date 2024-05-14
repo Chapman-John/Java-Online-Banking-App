@@ -1,1 +1,1 @@
-Java Spring MySQL
+Java Spring MySQL JDBC
