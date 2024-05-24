@@ -1,3 +1,10 @@
+
+Java Spring MySQL JDBC
+
+
+This is an online banking application using Java Spring Framework.
+
+
 """
 [Description of the code in the selection]
 
@@ -9,10 +16,3 @@
 
 [Example usage or code snippet, if applicable]
 """
-
-Java Spring MySQL JDBC
-
-
-This is an online banking application using Java Spring Framework.
-
-
