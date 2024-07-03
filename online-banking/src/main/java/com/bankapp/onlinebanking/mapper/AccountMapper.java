@@ -2,6 +2,9 @@ package com.bankapp.onlinebanking.mapper;
 
 import com.bankapp.onlinebanking.entity.Account;
 import com.bankapp.onlinebanking.dto.AccountDto;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 public class AccountMapper {
 

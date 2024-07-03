@@ -7,6 +7,7 @@ import com.bankapp.onlinebanking.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 import com.bankapp.onlinebanking.entity.Account;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.stereotype.Component;
 
 @Service
 public class AccountServiceImpl implements AccountService {
