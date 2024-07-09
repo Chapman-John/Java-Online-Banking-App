@@ -1,5 +1,5 @@
 
-## Online Banking App
+## Java Online Banking App
 
 Java Spring MySQL JDBC
 
