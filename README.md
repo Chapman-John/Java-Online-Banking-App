@@ -1,7 +1,7 @@
 
 ## Java Online Banking App
 
-Java Spring MySQL JDBC
+Java Spring Framework MySQL JDBC
 
 
 This is an online banking application using Java Spring Framework.
