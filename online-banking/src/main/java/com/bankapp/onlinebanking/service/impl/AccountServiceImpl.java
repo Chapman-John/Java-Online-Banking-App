@@ -27,9 +27,9 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public AccountDto getAccountById(Long id) {
-        Account account = accountRepository.findById(id).orElse
+        Account account = accountRepository.findById(id).orElseThrow(() -> new RuntimeException("Account not found"));
         accountRepository.findById(id).orElseThrow(() -> new RuntimeException("Account not found"));
         // return AccountMapper.mapToAccountDto(account);
-        return null
+        return null;
 
 }
