@@ -1,10 +1,10 @@
 
 ## Java Online Banking Appilcation
 
-Java Spring Framework MySQL JDBC
+Java Spring Boot Framework MySQL JDBC
 
 
-This is an online banking application using Java Spring Framework.
+This is an online banking application using Java Spring Boot, Spring Data JPA (Hibernate), and MySQL.
 
 
 ## License
