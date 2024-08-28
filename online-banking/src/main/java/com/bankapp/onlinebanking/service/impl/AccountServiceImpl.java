@@ -9,28 +9,30 @@ import com.bankapp.onlinebanking.entity.Account;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Component;
 
-@Service
-public class AccountServiceImpl implements AccountService {
+// @Service
+// public class AccountServiceImpl implements AccountService {
 
-    private AccountRepository accountRepository;
+// private AccountRepository accountRepository;
 
-    public AccountServiceImpl(AccountRepository accountRepository) {
-        this.accountRepository = accountRepository;
-    }
+// public AccountServiceImpl(AccountRepository accountRepository) {
+// this.accountRepository = accountRepository;
+// }
 
-    @Override
-    public AccountDto createAccount(AccountDto accountDto) {
-        Account account = AccountMapper.mapToAccount(accountDto);
-        Account saveAccount = accountRepository.save(account);
-        return AccountMapper.mapToAccountDto(saveAccount);
-    }
+// @Override
+// public AccountDto createAccount(AccountDto accountDto) {
+// Account account = AccountMapper.mapToAccount(accountDto);
+// Account saveAccount = accountRepository.save(account);
+// return AccountMapper.mapToAccountDto(saveAccount);
+// }
 
-    @Override
-    public AccountDto getAccountById(Long id) {
-        Account account = accountRepository.findById(id).orElseThrow(() -> new RuntimeException("Account not found"));
-        accountRepository.findById(id).orElseThrow(() -> new RuntimeException("Account not found"));
-        // return AccountMapper.mapToAccountDto(account);
-        return null;
+// @Override
+// public AccountDto getAccountById(Long id) {
+// Account account = accountRepository.findById(id).orElseThrow(() -> new
+// RuntimeException("Account not found"));
+// accountRepository.findById(id).orElseThrow(() -> new
+// RuntimeException("Account not found"));
+// // return AccountMapper.mapToAccountDto(account);
+// return null;
 
-    }
-}
+// }
+// }
