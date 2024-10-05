@@ -22,7 +22,7 @@ Additionally, you may choose to use this project under the terms of the [GNU Gen
 User Authentication System:
 
     Account creation functionality
-
+       
 Login system with username/account number and password
 
     Account Management:
