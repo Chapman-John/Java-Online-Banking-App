@@ -70,7 +70,6 @@ Get transaction details (date, amount, type)
 
 Account search functionality
 Account removal option
-
     Code Structure:
 
     Use object-oriented programming principles
