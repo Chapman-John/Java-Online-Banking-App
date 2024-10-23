@@ -1,9 +1,9 @@
-package com.bankapp.onlinebanking.service;
+// package com.bankapp.onlinebanking.service;
 
-import com.bankapp.onlinebanking.dto.AccountDto;
+// import com.bankapp.onlinebanking.dto.AccountDto;
 
-public interface AccountService {
+// public interface AccountService {
 
-    AccountDto createAccount(AccountDto accountDto);
+// AccountDto createAccount(AccountDto accountDto);
 
-}
+// }

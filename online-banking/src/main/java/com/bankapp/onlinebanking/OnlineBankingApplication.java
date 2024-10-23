@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class OnlineBankingApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		SpringApplication.run(OnlineBankingApplication.class, args);
 	}
 
