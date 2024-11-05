@@ -6,7 +6,7 @@ Java -- Spring Boot Framework -- MySQL -- JDBC
            
 This online banking application uses Java Spring Boot, Spring Data JPA (Hibernate), and MySQL.
   
-               
+                
 ## License 
          
 This project is primarily licensed under the [MIT License](https://opensource.org/licenses/MIT).
