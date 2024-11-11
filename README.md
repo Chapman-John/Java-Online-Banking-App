@@ -36,7 +36,7 @@ Transfer money between accounts
 
     View previous transactions
 
-Get transaction details (date, amount, type)
+    Get transaction details (date, amount, type)
    
     Security Features:
 
