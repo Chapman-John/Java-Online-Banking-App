@@ -32,7 +32,7 @@ Login system with username/account number and password
 Deposit functionalityWithdrawal functionality
 Transfer money between accounts
 
-    Transaction History:
+Transaction History:
 
     View previous transactions
 
