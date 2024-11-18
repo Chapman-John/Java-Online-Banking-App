@@ -20,8 +20,14 @@ public class AccountController {
         this.accountService = accountService;
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<Account> createAccount(@RequestBody Account account) {
+        if (account.getAccountHolderName() == null || account.getAccountHolderName().isEmpty()) {
+            return ResponseEntity.status(400).body(null);
+        }
+        if (accountService.accountExists(account.getAccountHolderName())) {
+            return ResponseEntity.status(409).body(null);
+        }
         Account saveAccount = accountService.createAccount(account);
         return new ResponseEntity<>(saveAccount, HttpStatus.CREATED);
     }

@@ -22,6 +22,10 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
+    public Boolean accountExists(String account) {
+        return accountRepository.findByAccountHolderName(account) != null;
+    }
+
     public List<Account> getAllAccounts() {
         return accountRepository.findAll();
     }
