@@ -63,7 +63,7 @@ Instructions for starting up the application will be provided here.
 
 To start the application, follow these steps:  
 
-1. **Start MySQL**  
+1. **Start MySQL on Mac with**  
    ```bash
    brew services start mysql
 
