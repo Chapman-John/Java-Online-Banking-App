@@ -1,2 +1,5 @@
 com/bankapp/onlinebanking/OnlineBankingApplication.class
 com/bankapp/onlinebanking/controller/AccountController.class
+com/bankapp/onlinebanking/service/AccountService.class
+com/bankapp/onlinebanking/entity/Account.class
+com/bankapp/onlinebanking/repository/AccountRepository.class
