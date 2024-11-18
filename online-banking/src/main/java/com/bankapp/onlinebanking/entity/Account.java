@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 // import lombok.Setter;
 // import lombok.AllArgsConstructor;
 // import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
 
 // @Getter
 // @Setter
@@ -23,7 +24,14 @@ public class Account {
     // @Column(name = "account_holder_name", nullable = false, length = 100)
     // @Getter
     // @Setter
+    @NotBlank
     private String accountHolderName;
+
+    @NotBlank
+    private String username;
+
+    @NotBlank
+    private String password;
 
     // @Column(nullable = false)
     // @Getter
@@ -52,6 +60,22 @@ public class Account {
 
     public void setAccountHolderName(String accountHolderName) {
         this.accountHolderName = accountHolderName;
+    }
+
+    public String getUsername() {
+        return this.username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public double getBalance() {

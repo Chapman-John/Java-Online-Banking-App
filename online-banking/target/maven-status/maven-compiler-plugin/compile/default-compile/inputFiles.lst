@@ -1,6 +1,5 @@
 /Applications/Java-AWS/Java-Online-Banking-App/online-banking/src/main/java/com/bankapp/onlinebanking/OnlineBankingApplication.java
 /Applications/Java-AWS/Java-Online-Banking-App/online-banking/src/main/java/com/bankapp/onlinebanking/controller/AccountController.java
 /Applications/Java-AWS/Java-Online-Banking-App/online-banking/src/main/java/com/bankapp/onlinebanking/entity/Account.java
-/Applications/Java-AWS/Java-Online-Banking-App/online-banking/src/main/java/com/bankapp/onlinebanking/mapper/AccountMapper.java
 /Applications/Java-AWS/Java-Online-Banking-App/online-banking/src/main/java/com/bankapp/onlinebanking/repository/AccountRepository.java
 /Applications/Java-AWS/Java-Online-Banking-App/online-banking/src/main/java/com/bankapp/onlinebanking/service/AccountService.java

@@ -23,14 +23,29 @@ public class AccountController {
 
     @PostMapping("/register")
     public ResponseEntity<Account> createAccount(@RequestBody Account account) {
-        if (account.getAccountHolderName() == null || account.getAccountHolderName().isEmpty()) {
-            return ResponseEntity.status(400).body(null);
+        if (account.getUsername() == null || account.getPassword() == null ||
+                account.getAccountHolderName() == null || account.getAccountHolderName().isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
-        if (accountService.accountExists(account.getAccountHolderName())) {
-            return ResponseEntity.status(409).body(null);
+
+        if (accountService.accountExists(account.getUsername())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
         }
         Account saveAccount = accountService.createAccount(account);
         return new ResponseEntity<>(saveAccount, HttpStatus.CREATED);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<Account> login(@RequestBody Map<String, String> credentials) {
+        String username = credentials.get("username");
+        String password = credentials.get("password");
+
+        try {
+            Account account = accountService.login(username, password);
+            return new ResponseEntity<>(account, HttpStatus.OK);
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
     }
 
     @GetMapping

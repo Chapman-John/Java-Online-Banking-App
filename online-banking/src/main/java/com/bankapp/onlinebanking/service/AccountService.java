@@ -19,7 +19,18 @@ public class AccountService {
     }
 
     public Account createAccount(Account account) {
+        if (accountRepository.findByUsername(account.getUsername()) != null) {
+            throw new RuntimeException("Username already exists");
+        }
         return accountRepository.save(account);
+    }
+
+    public Account login(String username, String password) {
+        Account account = accountRepository.findByUsername(username);
+        if (account == null || !account.getPassword().equals(password)) {
+            throw new RuntimeException("Invalid username or password");
+        }
+        return account;
     }
 
     public Boolean accountExists(String account) {
