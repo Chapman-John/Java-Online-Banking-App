@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/accounts")
@@ -45,13 +46,24 @@ public class AccountController {
     }
 
     @PostMapping("/{id}/deposit")
-    public ResponseEntity<Account> depositAmount(@PathVariable Long id, @RequestParam double amount) {
+    public ResponseEntity<Account> depositAmount(@PathVariable Long id, @RequestBody Map<String, Object> payload) {
+        // double amount = (double) payload.get("amount");
+        double amount = Double.parseDouble(payload.get("amount").toString());
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Deposit amount must be greater than zero");
+        }
         Account updatedAccount = accountService.depositAmount(id, amount);
         return new ResponseEntity<>(updatedAccount, HttpStatus.OK);
     }
 
     @PostMapping("/{id}/withdraw")
-    public ResponseEntity<Account> withdrawAmount(@PathVariable Long id, @RequestParam double amount) {
+    public ResponseEntity<Account> withdrawAmount(@PathVariable Long id,
+            @RequestBody Map<String, Object> payload) {
+        // double amount = (double) payload.get("amount");
+        double amount = Double.parseDouble(payload.get("amount").toString());
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Withdraw amount must be greater than zero");
+        }
         Account updatedAccount = accountService.withdrawAmount(id, amount);
         return new ResponseEntity<>(updatedAccount, HttpStatus.OK);
     }
