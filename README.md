@@ -63,11 +63,11 @@ Instructions for starting up the application will be provided here.
 
 To start the application, follow these steps:  
 
-1. **Start MySQL on Mac with**  
+1. **Start MySQL on Mac with:**  
    ```bash
    brew services start mysql
 
-2. **Start Backend Service with**
+2. **Start Backend Service with:**
    ```bash
     mvn clean install
     mvn spring-boot::run
