@@ -57,8 +57,7 @@ public class AccountController {
     }
 
     @PostMapping("/{id}/withdraw")
-    public ResponseEntity<Account> withdrawAmount(@PathVariable Long id,
-            @RequestBody Map<String, Object> payload) {
+    public ResponseEntity<Account> withdrawAmount(@PathVariable Long id, @RequestBody Map<String, Object> payload) {
         // double amount = (double) payload.get("amount");
         double amount = Double.parseDouble(payload.get("amount").toString());
         if (amount <= 0) {
