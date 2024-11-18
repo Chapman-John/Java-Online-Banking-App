@@ -29,7 +29,6 @@ public class Account {
     // @Getter
     // @Setter
     private double balance = 0.0;
-    // private double balance;
 
     public Account() {
     }

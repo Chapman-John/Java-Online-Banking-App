@@ -47,7 +47,6 @@ public class AccountController {
 
     @PostMapping("/{id}/deposit")
     public ResponseEntity<Account> depositAmount(@PathVariable Long id, @RequestBody Map<String, Object> payload) {
-        // double amount = (double) payload.get("amount");
         double amount = Double.parseDouble(payload.get("amount").toString());
         if (amount <= 0) {
             throw new IllegalArgumentException("Deposit amount must be greater than zero");
@@ -58,7 +57,6 @@ public class AccountController {
 
     @PostMapping("/{id}/withdraw")
     public ResponseEntity<Account> withdrawAmount(@PathVariable Long id, @RequestBody Map<String, Object> payload) {
-        // double amount = (double) payload.get("amount");
         double amount = Double.parseDouble(payload.get("amount").toString());
         if (amount <= 0) {
             throw new IllegalArgumentException("Withdraw amount must be greater than zero");
