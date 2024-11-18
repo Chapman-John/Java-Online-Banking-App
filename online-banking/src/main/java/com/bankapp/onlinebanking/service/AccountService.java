@@ -14,7 +14,6 @@ public class AccountService {
     @Autowired
     private final AccountRepository accountRepository;
 
-    // @Autowired
     public AccountService(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
@@ -28,6 +27,11 @@ public class AccountService {
     }
 
     public Account getAccountById(Long id) {
+        return accountRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Account not found"));
+    }
+
+    public Account getBalance(Long id) {
         return accountRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Account not found"));
     }
