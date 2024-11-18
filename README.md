@@ -1,78 +1,80 @@
 
-## Java Online Banking Application
-             
-Java -- Spring Boot Framework -- MySQL -- JDBC       
-        
-           
-This online banking application uses Java Spring Boot, Spring Data JPA (Hibernate), and MySQL.
-  
-                     
-## License    
-         
-This project is primarily licensed under the [MIT License](https://opensource.org/licenses/MIT).
+# Java Online Banking Application
 
-Additionally, you may choose to use this project under the terms of the [GNU General Public License (GPL)](https://www.gnu.org/licenses/gpl-3.0.html).
+### Technologies Used
+- **Java**  
+- **Spring Boot Framework**  
+- **MySQL**  
+- **JDBC**  
 
+This online banking application is built with Java Spring Boot, utilizing Spring Data JPA (Hibernate) and MySQL for database management.
 
-## Starting up    
-    
+---
+
 ## Features
 
+### User Authentication System
+- Account creation functionality  
+- Login system with username/account number and password  
 
-User Authentication System:
+### Account Management
+- View account balance  
+- Deposit functionality  
+- Withdrawal functionality  
+- Transfer money between accounts  
 
-    Account creation functionality
-       
-Login system with username/account number and password
+### Transaction History
+- View previous transactions  
+- Get transaction details (date, amount, type)  
 
-    Account Management:
+### Security Features
+- Encryption for sensitive data  
+- Input validation to prevent SQL injection and other attacks  
+- Session management  
 
-    Ability to view account balance
+### Database Integration
+- Store user information, account details, and transactions  
+- Use JDBC or an ORM framework for database operations  
 
-Deposit functionalityWithdrawal functionality
-Transfer money between accounts
+### Exception Handling
+- Proper error handling for insufficient funds, invalid inputs, etc.  
 
-Transaction History:
+### User Interface
+- Console-based interface for basic applications  
+- GUI using JavaFX or Swing for more advanced applications  
 
-    View previous transactions
+### Account Types
+- Support for different account types (e.g., savings, checking)  
 
-    Get transaction details (date, amount, type)
-   
-    Security Features:
+### Additional Features
+- Interest calculation for savings accounts  
+- Account search functionality  
+- Account removal option  
 
-    Encryption for sensitive data
-    Input validation to prevent SQL injection and other attacks
-    Session management
+### Code Structure
+- Use object-oriented programming principles  
+- Implement interfaces and classes for different bank operations  
+- Organize code into packages for better management  
 
-    Database Integration:
+---
 
-    Store user information, account details, and transactions
+## Starting Up
+Instructions for starting up the application will be provided here.  
 
-    Use JDBC or an ORM framework for database operations
+To start the application, follow these steps:  
 
-    Exception Handling:
+1. **Start MySQL on Mac with:**  
+   ```bash
+   brew services start mysql
 
-    Proper error handling for insufficient funds, invalid inputs, etc.
+2. **Start Backend Service with:**
+   ```bash
+    mvn clean install
+    mvn spring-boot::run
 
-    User Interface:
+---
 
-    Console-based interface for basic applications
+## License
+This project is primarily licensed under the [MIT License](https://opensource.org/licenses/MIT).  
 
-    GUI using JavaFX or Swing for more advanced applications
-
-    Account Types:
-
-    Support for different account types (e.g., savings, checking)
-
-    Additional Features:
-
-    Interest calculation for savings accounts
-
-Account search functionality
-Account removal option
-    Code Structure:
-
-    Use object-oriented programming principles
-
-Implement interfaces and classes for different bank operations
-Organize code into packages for better management
+Additionally, you may choose to use this project under the terms of the [GNU General Public License (GPL)](https://www.gnu.org/licenses/gpl-3.0.html). 
