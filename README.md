@@ -61,6 +61,17 @@ This online banking application is built with Java Spring Boot, utilizing Spring
 ## Starting Up
 Instructions for starting up the application will be provided here.  
 
+To start the application, follow these steps:  
+
+1. **Start MySQL**  
+   ```bash
+   brew services start mysql
+
+2. **Start Backend Service with**
+   ```bash
+    mvn clean install
+    mvn spring-boot::run
+
 ---
 
 ## License
