@@ -60,6 +60,12 @@ public class AccountController {
         return new ResponseEntity<>(account, HttpStatus.OK);
     }
 
+    @GetMapping("/{id}/balance")
+    public ResponseEntity<Double> getAccountBalance(@PathVariable Long id) {
+        double balance = accountService.getBalance(id);
+        return new ResponseEntity<>(balance, HttpStatus.OK);
+    }
+
     @PostMapping("/{id}/deposit")
     public ResponseEntity<Account> depositAmount(@PathVariable Long id, @RequestBody Map<String, Object> payload) {
         double amount = Double.parseDouble(payload.get("amount").toString());
@@ -78,6 +84,16 @@ public class AccountController {
         }
         Account updatedAccount = accountService.withdrawAmount(id, amount);
         return new ResponseEntity<>(updatedAccount, HttpStatus.OK);
+    }
+
+    @PostMapping("/{fromId}/transfer/{toId}")
+    public ResponseEntity<String> transferMoney(
+            @PathVariable Long fromId,
+            @PathVariable Long toId,
+            @RequestBody Map<String, Object> payload) {
+        double amount = Double.parseDouble(payload.get("amount").toString());
+        accountService.transferMoney(fromId, toId, amount);
+        return new ResponseEntity<>("Transfer successful", HttpStatus.OK);
     }
 
 }

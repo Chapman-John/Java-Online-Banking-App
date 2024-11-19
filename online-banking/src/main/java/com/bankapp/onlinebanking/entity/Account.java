@@ -16,7 +16,7 @@ import jakarta.validation.constraints.NotBlank;
 public class Account {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     // @Getter
     // @Setter
     private Long id;

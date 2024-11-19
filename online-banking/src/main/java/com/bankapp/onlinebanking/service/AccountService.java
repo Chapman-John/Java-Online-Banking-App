@@ -46,9 +46,13 @@ public class AccountService {
                 .orElseThrow(() -> new RuntimeException("Account not found"));
     }
 
-    public Account getBalance(Long id) {
-        return accountRepository.findById(id)
+    public double getBalance(Long id) {
+        // public Account getBalance(Long id) {
+        // return accountRepository.findById(id)
+        // .orElseThrow(() -> new RuntimeException("Account not found"));
+        Account account = accountRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Account not found"));
+        return account.getBalance();
     }
 
     public Account depositAmount(Long id, double amount) {
@@ -65,6 +69,28 @@ public class AccountService {
         }
         account.setBalance(account.getBalance() - amount);
         return accountRepository.save(account);
+    }
+
+    public void transferMoney(Long fromAccountId, Long toAccountId, double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Transfer amount must be greater than zero");
+        }
+
+        Account fromAccount = accountRepository.findById(fromAccountId)
+                .orElseThrow(() -> new RuntimeException("Sender account not found"));
+
+        Account toAccount = accountRepository.findById(toAccountId)
+                .orElseThrow(() -> new RuntimeException("Receiver account not found"));
+
+        if (fromAccount.getBalance() < amount) {
+            throw new RuntimeException("Insufficient funds in sender's account");
+        }
+
+        fromAccount.setBalance(fromAccount.getBalance() - amount);
+        toAccount.setBalance(toAccount.getBalance() + amount);
+
+        accountRepository.save(fromAccount);
+        accountRepository.save(toAccount);
     }
 
 }
