@@ -1,5 +1,5 @@
 
-# Java Online Banking Application
+# Java Online Banking Backend Application
 
 ### Technologies Used
 - **Java**  
