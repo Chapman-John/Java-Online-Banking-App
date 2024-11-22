@@ -2,7 +2,7 @@
 # Java Online Banking Backend Application
 
 ### Technologies Used
-- **Java**  
+- **Java **  
 - **Spring Boot Framework**  
 - **MySQL**  
 - **JDBC**  
