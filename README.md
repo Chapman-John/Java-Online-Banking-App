@@ -1,13 +1,15 @@
-
 # Java Online Banking Backend Application
 
 ### Technologies Used
 - **Java**  
 - **Spring Boot Framework**  
-- **MySQL**  
+- **H2 Database**  
 - **JDBC**  
+- **React**
+- **Tailwind CSS**
+- **Node.js**
 
-This online banking application is built with Java Spring Boot, utilizing Spring Data JPA (Hibernate) and MySQL for database management.
+This online banking application is built with Java Spring Boot, utilizing Spring Data JPA (Hibernate) and H2 in-memory database for data storage. The frontend is built with React and styled using Tailwind CSS.
 
 ---
 
@@ -63,9 +65,11 @@ Instructions for starting up the application will be provided here.
 
 To start the application, follow these steps:  
 
-1. **Start MySQL on Mac with:**  
+1. **Start Frontend Service with:**  
    ```bash
-   brew services start mysql
+   npm install
+   npm start
+   ```
 
 2. **Start Backend Service with:**
    ```bash

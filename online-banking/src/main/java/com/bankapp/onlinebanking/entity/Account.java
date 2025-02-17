@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 // import lombok.AllArgsConstructor;
 // import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
 
 // @Getter
 // @Setter
@@ -13,6 +14,7 @@ import jakarta.validation.constraints.NotBlank;
 // @NoArgsConstructor
 @Entity
 @Table(name = "accounts")
+@Data
 public class Account {
 
     @Id
@@ -36,14 +38,39 @@ public class Account {
     // @Column(nullable = false)
     // @Getter
     // @Setter
-    private double balance = 0.0;
+    private String accountNumber;
+
+    private Double balance = 0.0;
+    private String accountType;
 
     public Account() {
+        this.balance = 0.0;
+        this.accountType = "SAVINGS"; // Default account type
+        this.accountNumber = generateAccountNumber(); // Will add helper method
     }
 
     public Account(String accountHolderName, double balance) {
         this.accountHolderName = accountHolderName;
         this.balance = balance;
+        this.accountType = "SAVINGS"; // Default account type
+        this.accountNumber = generateAccountNumber();
+    }
+
+    // Add new constructor with all fields
+    public Account(String accountHolderName, String username, String password, 
+                  String accountNumber, Double balance, String accountType) {
+        this.accountHolderName = accountHolderName;
+        this.username = username;
+        this.password = password;
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.accountType = accountType;
+    }
+
+    // Helper method to generate account number
+    private String generateAccountNumber() {
+        // Simple implementation - you might want to make this more sophisticated
+        return "ACC" + System.currentTimeMillis();
     }
 
     public Long getId() {
@@ -78,12 +105,28 @@ public class Account {
         this.password = password;
     }
 
-    public double getBalance() {
+    public Double getBalance() {
         return this.balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
+    }
+
+    public String getAccountNumber() {
+        return this.accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getAccountType() {
+        return this.accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
     }
 
 }

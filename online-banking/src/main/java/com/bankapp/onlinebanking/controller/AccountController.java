@@ -2,6 +2,7 @@ package com.bankapp.onlinebanking.controller;
 
 import com.bankapp.onlinebanking.entity.Account;
 import com.bankapp.onlinebanking.service.AccountService;
+import com.bankapp.onlinebanking.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,9 @@ public class AccountController {
 
     @Autowired
     private final AccountService accountService;
+
+    @Autowired
+    private AccountRepository accountRepository;
 
     public AccountController(AccountService accountService) {
         this.accountService = accountService;
@@ -49,9 +53,8 @@ public class AccountController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Account>> getAllAccounts() {
-        List<Account> accounts = accountService.getAllAccounts();
-        return new ResponseEntity<>(accounts, HttpStatus.OK);
+    public List<Account> getAllAccounts() {
+        return accountRepository.findAll();
     }
 
     @GetMapping("/{id}")
